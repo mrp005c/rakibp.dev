@@ -9,14 +9,16 @@ import Social_links from "@/components/data-display/Social-links";
 
 const Hero = () => {
   return (
-    <section className="bg-secgray">
-      <div className=" max-w-7xl mx-auto flex flex-col-reverse sm:flex-row justify-between py-10 px-3 items-center">
+    <section className="bg-secgray min-h-[90vh] flex-center md:py-12">
+      <div className=" max-w-7xl mx-auto flex flex-col-reverse md:flex-row justify-between py-10 px-3 items-center">
         {/* left side */}
-        <div className="flex-1">
-          <h1 className="text-[48px] font-bold">Hi, I&apos;m Rakib 👋</h1>
+        <div className="flex-1 p-2">
+          <h1 className="text-[48px] max-sm:text-[36px] font-bold">
+            Hi, I&apos;m Rakib 👋
+          </h1>
           <h3 className="text-2xl font-semibold">
             I&apos;m a&nbsp;
-            {/* <TypeAnimation
+            <TypeAnimation
               sequence={[
                 "Front-End Developer",
                 1000,
@@ -24,12 +26,10 @@ const Hero = () => {
                 1000,
                 "Full Stack Developer",
                 1000,
-                "JavaScript Developer",
-                1000,
               ]}
               speed={50}
               repeat={Infinity}
-            /> */}
+            />
           </h3>
           <p>
             I'm a full stack developer (React.js & Node.js) with a focus on
@@ -54,14 +54,14 @@ const Hero = () => {
               <Typography>Available for new projects</Typography>
             </div>
           </div>
-          <Social_links/>
+          <Social_links />
         </div>
 
         {/* right side */}
-        <div className="min-w-[400px] flex-center">
-          <div className="relative h-[350px] w-[290px]">
-            <div className="absolute rounded-sm top-8 left-8 h-[300px] w-[280px] bg-gray-300 dark:bg-gray-500"></div>
-            <div className="absolute rounded-sm top-0 left-0 border-16 box-border border-secgray  h-[300px] w-[280px] ">
+        <div className=" flex-center">
+          <div className="relative h-87.5 w-72.5">
+            <div className="absolute rounded-sm top-8 left-8 h-75 w-70 bg-gray-300 dark:bg-gray-500"></div>
+            <div className="absolute rounded-sm top-0 left-0 border-16 box-border border-secgray  h-75 w-70 ">
               <Image
                 fill
                 className="overflow-hidden rounded-sm"

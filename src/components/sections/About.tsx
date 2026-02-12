@@ -56,7 +56,7 @@ const About = () => {
         </div>
 
         {/* right side */}
-        <div className="md:w-1/2 min-w-100 flex-center">
+        <div className="md:w-1/2 flex-center">
           <div className="relative h-87.5 w-72.5">
             <div className="absolute rounded-sm top-8 -left-8 h-75 w-70 bg-gray-300 dark:bg-gray-500"></div>
             <div className="absolute rounded-sm top-0 left-0 border-16 box-border border-violet-100 dark:border-[#582a5b] h-75 w-70 ">
