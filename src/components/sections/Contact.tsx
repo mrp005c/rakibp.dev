@@ -44,7 +44,7 @@ const Contact = () => {
             <div className="py-8 text-3xl font-bold font-mono">
               <div className="email flex-center flex-wrap gap-3">
                 <MdEmail />
-                <h2 className="break-all">mrp005c@gmail.com</h2>
+                <a  href="mailto:mrp005c@gmail.com" className="break-all">mrp005c@gmail.com</a>
                 <Button
                   onClick={async () => {
                     try {
@@ -66,7 +66,7 @@ const Contact = () => {
               </div>
               <div className="phone flex-center flex-wrap gap-3">
                 <MdPhone />
-                <h2 className="break-all">+8801756535801</h2>
+                <a href="tel:+8801756535801" className="break-all">+8801756535801</a>
                 <Button
                   onClick={async () => {
                     try {
