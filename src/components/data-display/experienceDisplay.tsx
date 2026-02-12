@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { experienceDetails as ExpProps } from "@/components/lib/types";
+import { experienceDetailstype as ExpProps } from "@/components/lib/types";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 
