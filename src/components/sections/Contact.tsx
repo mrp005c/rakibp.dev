@@ -3,29 +3,14 @@ import React, { useState } from "react";
 import { Tags } from "@/components/general/tags";
 import { MdEmail, MdPhone } from "react-icons/md";
 import { CopyIcon } from "lucide-react";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import { IoMdDoneAll } from "react-icons/io";
-import Social_links from "../data-display/Social-links";
-import { Input } from "../ui/input";
-import { Textarea } from "../ui/textarea";
+import Social_links from "@/components/data-display/Social-links";
+import SendMessage from "@/components/general/SendMessage";
 
 const Contact = () => {
   const [isCopyid, setIsCopyid] = useState({ email: false, phone: false });
 
-  const [formData, setFormData] = useState({
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log(formData);
-  };
   return (
     <section
       id="contact"
@@ -44,7 +29,9 @@ const Contact = () => {
             <div className="py-8 text-3xl font-bold font-mono">
               <div className="email flex-center flex-wrap gap-3">
                 <MdEmail />
-                <a  href="mailto:mrp005c@gmail.com" className="break-all">mrp005c@gmail.com</a>
+                <a href="mailto:mrp005c@gmail.com" className="break-all">
+                  mrp005c@gmail.com
+                </a>
                 <Button
                   onClick={async () => {
                     try {
@@ -66,7 +53,9 @@ const Contact = () => {
               </div>
               <div className="phone flex-center flex-wrap gap-3">
                 <MdPhone />
-                <a href="tel:+8801756535801" className="break-all">+8801756535801</a>
+                <a href="tel:+8801756535801" className="break-all">
+                  +8801756535801
+                </a>
                 <Button
                   onClick={async () => {
                     try {
@@ -101,56 +90,7 @@ const Contact = () => {
 
         {/* right side  */}
 
-        <div className="md:w-1/2 p-4 rounded-md bg-violet-200 dark:bg-[#282838] border-red/30 border">
-          <form
-            onSubmit={handleSubmit}
-            className="space-y-4 flex-center flex-col"
-          >
-            <h3 className="text-xl text-center font-bold">
-              Put A Message Here
-            </h3>
-            <div className="space-y-4 w-full">
-              <div className="grid grid-cols-1 space-y-2">
-                <label htmlFor="email">Email</label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="Enter Email"
-                  onChange={handleChange}
-                  value={formData.email}
-                />
-              </div>
-              <div className="grid grid-cols-1 space-y-2">
-                <label htmlFor="subject">Subject</label>
-                <Input
-                  id="subject"
-                  name="subject"
-                  type="text"
-                  placeholder="Enter Subject"
-                  onChange={handleChange}
-                  value={formData.subject}
-                />
-              </div>
-              <div className="grid grid-cols-1 space-y-2">
-                <label htmlFor="message">Message</label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  placeholder="Write a message"
-                  onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
-                    setFormData({
-                      ...formData,
-                      [e.target.name]: e.target.value,
-                    });
-                  }}
-                  value={formData.message}
-                />
-              </div>
-            </div>
-            <Button type="submit">Send Message</Button>
-          </form>
-        </div>
+        <SendMessage />
       </div>
     </section>
   );

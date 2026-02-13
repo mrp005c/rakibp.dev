@@ -6,53 +6,53 @@ import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import Typography from "@/components/general/typography";
 import Social_links from "@/components/data-display/Social-links";
+import { SelfInfo } from "@/components/lib/data";
 
 const Hero = () => {
   return (
-    <section className="bg-secgray min-h-[90vh] flex-center md:py-12">
+    <section className="bg-secgray min-h-[90vh] flex-center md:py-12" id="home">
       <div className=" max-w-7xl mx-auto flex flex-col-reverse md:flex-row justify-between py-10 px-3 items-center">
         {/* left side */}
-        <div className="flex-1 p-2">
+        <div className="flex-1 p-2" >
           <h1 className="text-[48px] max-sm:text-[36px] font-bold">
-            Hi, I&apos;m Rakib 👋
+            Hi, I&apos;m {SelfInfo.lastName} 👋
           </h1>
           <h3 className="text-2xl font-semibold">
             I&apos;m a&nbsp;
             <TypeAnimation
-              sequence={[
-                "Front-End Developer",
-                1000,
-                "Back-End Developer",
-                1000,
-                "Full Stack Developer",
-                1000,
-              ]}
+              sequence={SelfInfo.label.flatMap((item) => [item, 1000])}
               speed={50}
               repeat={Infinity}
             />
           </h3>
-          <p>
-            I'm a full stack developer (React.js & Node.js) with a focus on
-            creating (and occasionally designing) exceptional digital
-            experiences that are fast, accessible, visually appealing, and
-            responsive. Even though I have been creating web applications for
-            over 6 months, I still love it as if it was something new.
-          </p>
+          <p>{SelfInfo.summary}</p>
 
           <div className="links py-4 font-mono">
-            <div className="flex items-center">
-              <MapPin />
-              <Typography>Natore, Bangladesh</Typography>
-            </div>
             <div className="flex items-center ">
-              <div className="flex h-6 w-6 items-center justify-center">
-                <span className="relative flex h-3 w-3">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-500"></span>
-                </span>
-              </div>
-              <Typography>Available for new projects</Typography>
+              <MapPin className="animate-bounce" />
+              <Typography>{SelfInfo.address}</Typography>
             </div>
+            {SelfInfo.availableForNewProject ? (
+              <div className="flex items-center ">
+                <div className="flex h-6 w-6 items-center justify-center">
+                  <span className="relative flex h-3 w-3">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-500"></span>
+                  </span>
+                </div>
+                <Typography>Available for new projects</Typography>
+              </div>
+            ) : (
+              <div className="flex items-center ">
+                <div className="flex h-6 w-6 items-center justify-center">
+                  <span className="relative flex h-3 w-3">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75"></span>
+                    <span className="relative inline-flex h-3 w-3 rounded-full bg-red-500"></span>
+                  </span>
+                </div>
+                <Typography>Working in a project</Typography>
+              </div>
+            )}
           </div>
           <Social_links />
         </div>
@@ -64,9 +64,10 @@ const Hero = () => {
             <div className="absolute rounded-sm top-0 left-0 border-16 box-border border-secgray  h-75 w-70 ">
               <Image
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="overflow-hidden rounded-sm"
-                src="/images/rakib/me.jpg"
-                alt="rakib"
+                src={SelfInfo.avatar}
+                alt={SelfInfo.firstName.concat(SelfInfo.lastName)}
               />
             </div>
           </div>

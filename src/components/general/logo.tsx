@@ -6,7 +6,7 @@ import React from "react";
 const Logo = () => {
   return (
     <Link href={"/"} className="logo flex-center font-semibold text-2xl relative h-20 w-48">
-      <Image src={"/images/rakib/rakiblogo.png"} alt="SiteLogo" height={80} width={200} className="h-16 w-48 object-contain " /> 
+      <Image src={"/images/rakib/rakiblogo.png"} alt="SiteLogo" height={80} width={200} className="h-16 w-48 dark:invert object-contain " /> 
     </Link>
   );
 };

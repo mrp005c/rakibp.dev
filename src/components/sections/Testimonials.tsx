@@ -1,7 +1,10 @@
+"use client";
 import React from "react";
 import { Tags } from "@/components/general/tags";
 import { TestimonialsDetails } from "../lib/data";
 import TestimonialsDisplay from "../data-display/TestimonialsDisplay";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation, Autoplay } from "swiper/modules";
 
 const Testimonials = () => {
   return (
@@ -15,10 +18,26 @@ const Testimonials = () => {
           Nice things people have said about me:
         </div>
 
-        <div className="flex justify-center flex-wrap content-center gap-4">
-          {TestimonialsDetails.map((testimonal, index) => (
-            <TestimonialsDisplay key={index} {...testimonal} />
-          ))}
+        <div className="py-8">
+          <Swiper
+            modules={[Autoplay, Pagination, Navigation]}
+            pagination={{ enabled: true }}
+            freeMode={true}
+            loop
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+            }}
+            speed={2000}
+            className="flex flex-center justify-center flex-wrap content-center gap-4 "
+          >
+            {TestimonialsDetails.map((testimonal, index) => (
+              <SwiperSlide key={index} >
+                <TestimonialsDisplay {...testimonal} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex assumenda temporibus accusantium quia excepturi illo animi voluptate. Sequi eius fugiat accusantium adipisci corporis quae nostrum? Nobis, perferendis. Accusamus illo alias quod culpa.</p>
         </div>
       </div>
     </section>

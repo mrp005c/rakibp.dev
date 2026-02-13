@@ -20,15 +20,15 @@ const ExperienceDisplay = ({
     month: "short",
   };
   return (
-    <div className="flex justify-between flex-col md:flex-row gap-3  p-4 rounded-sm box-border bg-gray border border-red/20 shadow-md shadow-blue">
+    <div className="flex justify-between flex-col md:flex-row gap-3  p-8 rounded-sm box-border bg-gray border border-red/20 shadow-md shadow-blue">
       {/* 1 */}
       <div className="relative max-md:order-1 md:w-1/4">
         <Image
           src={theme === "dark" ? (darkModeLogo ? darkModeLogo : logo) : logo}
-          height={50}
+          height={70}
           width={200}
           alt={logoAlt}
-          className="h-12 w-49 max-w-full object-contain"
+          className="h-20 w-49 max-w-full object-contain"
         />
       </div>
       {/* 2 */}

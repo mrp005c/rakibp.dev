@@ -22,6 +22,7 @@ export type projectstype = {
   name: string;
   description: string;
   url: string;
+  githubLink: string;
   previewImage: string | StaticImageData;
   technologies: string[];
 };
