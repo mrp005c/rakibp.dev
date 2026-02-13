@@ -14,20 +14,20 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="bg-violet-100 dark:bg-[#1b1b40] pt-16 py-3"
+      className="bg-violet-100 dark:bg-[#1b1b40] pt-16 py-3 pb-48"
     >
       <Tags>Get In Touch</Tags>
       <div className=" max-w-7xl mx-auto px-3 py-4 flex justify-center max-md:flex-col gap-3">
         {/* left side */}
-        <div className="md:w-1/2 p-4 rounded-md bg-gray-200 dark:bg-gray-700">
-          <div className="text-center text-gray-600 dark:text-gray-400 font-semibold text-lg max-w-200 mx-auto">
+        <div className="md:w-1/2 p-4 rounded-md bg-gray-200 dark:bg-gray-700 reveal">
+          <div className="reveal text-center text-gray-600 dark:text-gray-400 font-semibold text-lg max-w-200 mx-auto">
             What’s next? Feel free to reach out to me if you are looking for a
             developer, have a query, or simply want to connect.
           </div>
-          <div className="flex justify-center flex-col flex-wrap content-center gap-4">
+          <div className="flex justify-center flex-col flex-wrap content-center gap-4 reveal">
             {/* email and phone  */}
-            <div className="py-8 text-3xl font-bold font-mono">
-              <div className="email flex-center flex-wrap gap-3">
+            <div className="py-8 text-3xl font-bold font-mono ">
+              <div className="email flex-center flex-wrap gap-3 reveal">
                 <MdEmail />
                 <a href="mailto:mrp005c@gmail.com" className="break-all">
                   mrp005c@gmail.com
@@ -51,7 +51,7 @@ const Contact = () => {
                   {isCopyid.email ? <IoMdDoneAll /> : <CopyIcon />}
                 </Button>
               </div>
-              <div className="phone flex-center flex-wrap gap-3">
+              <div className="phone flex-center flex-wrap gap-3 reveal">
                 <MdPhone />
                 <a href="tel:+8801756535801" className="break-all">
                   +8801756535801
@@ -79,7 +79,7 @@ const Contact = () => {
 
             {/* social links */}
 
-            <div className="flex-center flex-col">
+            <div className="flex-center flex-col reveal">
               <div className="text-lg font-semibold">
                 You may also find me on these platforms!
               </div>

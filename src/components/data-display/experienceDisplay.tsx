@@ -20,9 +20,9 @@ const ExperienceDisplay = ({
     month: "short",
   };
   return (
-    <div className="flex justify-between flex-col md:flex-row gap-3  p-8 rounded-sm box-border bg-gray border border-red/20 shadow-md shadow-blue">
+    <div className="flex justify-between flex-col md:flex-row gap-3  p-8 rounded-sm box-border bg-gray border border-red/20 shadow-md shadow-blue reveal">
       {/* 1 */}
-      <div className="relative max-md:order-1 md:w-1/4">
+      <div className="relative max-md:order-1 md:w-1/4 reveal">
         <Image
           src={theme === "dark" ? (darkModeLogo ? darkModeLogo : logo) : logo}
           height={70}
@@ -32,7 +32,7 @@ const ExperienceDisplay = ({
         />
       </div>
       {/* 2 */}
-      <div className="flex-1 max-md:order-3 md:w-2/4">
+      <div className="flex-1 max-md:order-3 md:w-2/4 reveal">
         <h3 className="text-xl  font-semibold">{position}</h3>
         <div>
           {summary.map((value, index) => (
@@ -41,7 +41,7 @@ const ExperienceDisplay = ({
         </div>
       </div>
       {/* 3 */}
-      <div className="max-md:order-2 md:w-1/4">
+      <div className="max-md:order-2 md:w-1/4 reveal">
         {new Intl.DateTimeFormat("en-US", dateFormatOpt).format(startDate)} -{" "}
         {currentlyWorkHere
           ? "Present"

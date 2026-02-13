@@ -1,8 +1,21 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import React from "react";
+import { useRouter } from "next/navigation";
+import React, { useState } from "react";
 
-const page = () => {
+type Message = {
+  _id: string;
+  name: string;
+  subject: string;
+  email: string;
+  message: string;
+  readStatus: boolean;
+};
+
+const Page = () => {
+  const router = useRouter();
+  const [messages, setMessages] = useState<Message[]>([]);
+
   const handleLoad = async () => {
     const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL;
     if (!SERVER_URL) {
@@ -13,8 +26,11 @@ const page = () => {
       const data = await fetch(`${SERVER_URL}/api/personal`, {
         method: "GET",
       });
-      const res = await data.json();
-      console.log(res);
+      const { success, result }: { success: boolean; result: Message[] } =
+        await data.json();
+      if (success) {
+        setMessages(result);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -44,7 +60,6 @@ const page = () => {
         throw new Error("Fetch failed not ok");
       }
       const res = await data.json();
-      console.log({ success: res });
     } catch (error) {
       console.log(error);
     }
@@ -64,19 +79,54 @@ const page = () => {
         throw new Error("Fetch failed not ok");
       }
       const res = await data.json();
-      console.log({ success: res });
     } catch (error) {
       console.log(error);
     }
   };
 
+  const handleLogOut = async () => {
+    try {
+      const res = await fetch("/api/admin/logout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        redirect: "follow",
+      });
+      if (!res.ok) {
+        throw new Error("Log Out Failed!");
+      }
+      router.replace("/");
+    } catch {
+      console.log("error");
+    }
+  };
+
   return (
     <div>
+      <Button onClick={handleLogOut}>Log out</Button>
       <Button onClick={handleLoad}>Load Messages</Button>
-      <Button onClick={() => updateMessage("698efddc6177e059786d8766", true)}>Update Message</Button>
-      <Button onClick={() => deleteMessage("698efddc6177e059786d8766")}>Delete Message</Button>
+      <Button onClick={() => updateMessage("698efddc6177e059786d8766", true)}>
+        Update Message
+      </Button>
+      <Button onClick={() => deleteMessage("698efddc6177e059786d8766")}>
+        Delete Message
+      </Button>
+
+      <div className="">
+        {messages && messages.length > 0 ? (
+          messages.map((item, index) => (
+            <div key={index}>
+              <div>{item.name}</div>
+              <div>{item.email}</div>
+              <div>{item.subject}</div>
+              <div>{item.message}</div>
+            </div>
+          ))
+        ) : (
+          <div>No Message to show</div>
+        )}
+      </div>
     </div>
   );
 };
 
-export default page;
+export default Page;

@@ -10,7 +10,7 @@ const TestimonialsDisplay = ({
   title,
 }: TestiProps) => {
   return (
-    <div className="mt-8 bg-gray/80 mx-auto relative rounded-md p-8 border border-red/40  max-w-80 shadow-md shadow-blue/40 text-sm">
+    <div className="reveal mt-8 bg-gray/80 mx-auto relative rounded-md p-8 border border-red/40  max-w-80 shadow-md shadow-blue/40 text-sm">
       
       <div className="flex-center flex-col">
         <Image

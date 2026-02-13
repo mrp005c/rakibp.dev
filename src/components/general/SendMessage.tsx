@@ -44,7 +44,6 @@ const SendMessage = () => {
       if (res.success) {
         reset();
       }
-      console.log({ success: res });
     } catch (error) {
       console.log(error);
     }
@@ -54,7 +53,7 @@ const SendMessage = () => {
     <div className="md:w-1/2 p-4 rounded-md bg-violet-200 dark:bg-[#282838] border-red/30 border">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="space-y-4 flex-center flex-col"
+        className="space-y-4 flex-center flex-col reveal"
       >
         <h3 className="text-xl text-center font-bold">Feel Free To Reach Out</h3>
         <div className="space-y-4 w-full">

@@ -43,10 +43,6 @@ const Header = () => {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    console.log(active);
-  }, [active]);
-
   return (
     <header
       className={`sticky top-0 z-900 box-border border-gray/20 border bg-gray/50 backdrop-blur-xl h-17.5 `}

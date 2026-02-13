@@ -14,7 +14,7 @@ const Testimonials = () => {
     >
       <Tags>Testimonials</Tags>
       <div className=" max-w-7xl mx-auto px-3 py-4">
-        <div className="text-center">
+        <div className="text-center reveal">
           Nice things people have said about me:
         </div>
 

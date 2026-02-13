@@ -16,10 +16,10 @@ const ProjectsDisplay = ({
 }: ProjectPros & { index: number }) => {
   return (
     <div
-      className={`flex-between items-stretch max-md:flex-col rounded-md border border-red/30 my-4 shadow-md shadow-blue/50 ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}
+      className={`flex-between reveal items-stretch max-md:flex-col rounded-md border border-red/30 my-4 shadow-md shadow-blue/50 ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}
     >
       {/* Image  */}
-      <div className="md:w-1/2 flex-center p-8 box-border rounded-md bg-violet-100 dark:bg-[#344c5c]">
+      <div className="md:w-1/2 flex-center p-8 box-border rounded-md bg-violet-100 dark:bg-[#344c5c] reveal">
         <Link
           target="_blank"
           href={url}
@@ -36,15 +36,15 @@ const ProjectsDisplay = ({
       </div>
 
       {/* text  */}
-      <div className="md:w-1/2 bg-violet-50 dark:bg-[#2d3c46] rounded-md p-8 space-y-5">
-        <h3 className="text-2xl font-bold ">{name}</h3>
-        <p>{description}</p>
-        <div className="w-full flex flex-wrap items-stretch text-balance justify-between gap-2">
+      <div className="md:w-1/2 bg-violet-50 dark:bg-[#2d3c46] rounded-md p-8 space-y-5 reveal">
+        <h3 className="text-2xl font-bold reveal">{name}</h3>
+        <p className="reveal">{description}</p>
+        <div className="w-full flex flex-wrap items-stretch text-balance justify-between gap-2 reveal">
           {technologies.map((item, index) => (
             <Bubble key={index}>{item}</Bubble>
           ))}
         </div>
-        <div className="flex gap-5 flex-wrap">
+        <div className=" flex gap-5 flex-wrap reveal">
           <Link
             target="_blank"
             href={url}
