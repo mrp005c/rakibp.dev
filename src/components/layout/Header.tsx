@@ -15,6 +15,7 @@ import {
 import { Menu, X } from "lucide-react";
 import Logo from "@/components/general/logo";
 import Download_CV from "@/components/general/download-cv";
+import { BiUpArrowAlt } from "react-icons/bi";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -117,6 +118,7 @@ const Header = () => {
           </DrawerContent>
         </Drawer>
       </div>
+
     </header>
   );
 };

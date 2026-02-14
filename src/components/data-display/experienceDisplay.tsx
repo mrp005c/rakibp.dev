@@ -28,13 +28,13 @@ const ExperienceDisplay = ({
           height={70}
           width={200}
           alt={logoAlt}
-          className="h-20 w-49 max-w-full object-contain"
+          className="h-20 w-49 max-w-full object-contain  reveal"
         />
       </div>
       {/* 2 */}
       <div className="flex-1 max-md:order-3 md:w-2/4 reveal">
-        <h3 className="text-xl  font-semibold">{position}</h3>
-        <div>
+        <h3 className="text-xl  font-semibold  reveal">{position}</h3>
+        <div className=" reveal">
           {summary.map((value, index) => (
             <p key={index}>{value}</p>
           ))}

@@ -2,47 +2,24 @@
 
 import { MapPin } from "lucide-react";
 import Image from "next/image";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 
 import { TypeAnimation } from "react-type-animation";
 import Typography from "@/components/general/typography";
 import Social_links from "@/components/data-display/Social-links";
 import { SelfInfo } from "@/components/lib/data";
-import { useEffect } from "react";
 
 const Hero = () => {
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.utils.toArray(".reveal").forEach((el: any) => {
-      gsap.fromTo(
-        el,
-        { opacity: 0, y: 40 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          scrollTrigger: {
-            once: false,
-            trigger: el,
-            start: "top 85%",
-            toggleActions: "play none none none",
-          },
-        },
-      );
-    });
-  }, []);
 
   return (
     <section className="bg-secgray min-h-[90vh] flex-center md:py-12" id="home">
       <div className=" max-w-7xl mx-auto flex flex-col-reverse md:flex-row justify-between py-10 px-3 items-center">
         {/* left side */}
         <div className="flex-1 p-2 ">
-          <h1 className="text-[48px] max-sm:text-[36px] font-bold reveal">
+          <h1 className="text-[48px] max-sm:text-[36px] font-bold reveal-late">
             Hi, I&apos;m {SelfInfo.lastName} 👋
           </h1>
-          <h3 className="text-2xl font-semibold reveal">
+          <h3 className="text-2xl font-semibold reveal-late">
             I&apos;m a&nbsp;
             <TypeAnimation
               sequence={SelfInfo.label.flatMap((item) => [item, 1000])}
@@ -50,9 +27,9 @@ const Hero = () => {
               repeat={Infinity}
             />
           </h3>
-          <p className="reveal">{SelfInfo.summary}</p>
+          <p className="reveal-late">{SelfInfo.summary}</p>
 
-          <div className="links py-4 font-mono reveal">
+          <div className="links py-4 font-mono reveal-late">
             <div className="flex items-center ">
               <MapPin className="animate-bounce" />
               <Typography>{SelfInfo.address}</Typography>
@@ -83,10 +60,10 @@ const Hero = () => {
         </div>
 
         {/* right side */}
-        <div className=" flex-center reveal">
+        <div className=" flex-center reveal-late">
           <div className="relative h-87.5 w-72.5">
-            <div className="absolute rounded-sm top-8 left-8 h-75 w-70 bg-gray-300 dark:bg-gray-500 reveal"></div>
-            <div className="absolute rounded-sm top-0 left-0 border-16 box-border border-secgray  h-75 w-70 reveal">
+            <div className="absolute rounded-sm top-8 left-8 h-75 w-70 bg-gray-300 dark:bg-gray-500 reveal-late"></div>
+            <div className="absolute rounded-sm top-0 left-0 border-16 box-border border-secgray  h-75 w-70 reveal-late">
               <Image
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

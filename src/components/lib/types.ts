@@ -33,3 +33,14 @@ export type testimonialstype = {
   testimonial: string;
   title: string;
 };
+
+export type messagetype = {
+  _id: string;
+  name: string;
+  subject: string;
+  email: string;
+  message: string;
+  readStatus: boolean;
+  createdAt: string;
+  updatedAt: string;
+};

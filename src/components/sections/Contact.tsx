@@ -17,7 +17,7 @@ const Contact = () => {
       className="bg-violet-100 dark:bg-[#1b1b40] pt-16 py-3 pb-48"
     >
       <Tags>Get In Touch</Tags>
-      <div className=" max-w-7xl mx-auto px-3 py-4 flex justify-center max-md:flex-col gap-3">
+      <div className=" max-w-7xl mx-auto px-3 py-4 flex justify-center max-md:flex-col-reverse gap-3">
         {/* left side */}
         <div className="md:w-1/2 p-4 rounded-md bg-gray-200 dark:bg-gray-700 reveal">
           <div className="reveal text-center text-gray-600 dark:text-gray-400 font-semibold text-lg max-w-200 mx-auto">

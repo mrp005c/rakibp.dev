@@ -31,8 +31,7 @@ if (!secret) {
   response.cookies.set("admin_token", token, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
-    // secure: false,
-    sameSite: "lax",
+    sameSite: "strict",
     path: "/",
   });
 

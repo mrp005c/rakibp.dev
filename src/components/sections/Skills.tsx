@@ -21,7 +21,7 @@ const Skills = () => {
         <div>
           {Object.entries(TechDetails).map(([category, items], index) => (
             <div key={index}>
-              <h2 className="text-xl font-semibold text-center w-fit  rounded-full bg-green/20 box-border px-4 py-1">
+              <h2 className=" reveal text-xl font-semibold text-center w-fit  rounded-full bg-green/20 box-border px-4 py-1">
                 {category}
               </h2>
               <Swiper
@@ -56,7 +56,7 @@ const Skills = () => {
                     <Link
                       href={item.url}
                       target="_blank"
-                      className="flex-center pt-4 flex-col gap-2 hover:scale-110  transition-all"
+                      className="flex-center pt-4 flex-col gap-2 hover:scale-110  transition-all  reveal"
                     >
                       <Image
                         height={100}

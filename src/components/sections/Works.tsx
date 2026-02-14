@@ -8,7 +8,7 @@ const Works = () => {
     <section id="works" className="bg-violet-100 dark:bg-[#1b1b40] pt-16 py-3">
       <Tags>Works</Tags>
       <div className=" max-w-7xl mx-auto px-3 py-4">
-        <div className="text-center">
+        <div className="text-center  reveal">
           Some of the noteworthy projects I have built:
         </div>
         <div>

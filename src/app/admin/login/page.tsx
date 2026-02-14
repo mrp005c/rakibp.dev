@@ -1,9 +1,11 @@
 "use client";
+import { AlertDiagram } from "@/components/general/alertDiagram";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { InputEventHandler, useEffect, useRef, useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { IoEye, IoEyeOff } from "react-icons/io5";
 import { VscLoading } from "react-icons/vsc";
 
 type Inputs = {
@@ -12,17 +14,20 @@ type Inputs = {
 };
 
 const Page = () => {
+  const [showAlert, setShowAlert] = useState<boolean>(false);
+
+  const [showPass, setShowPass] = useState<boolean>(false);
   const {
     register,
     handleSubmit,
     setError,
+    setFocus,
     formState: { errors, isSubmitting },
   } = useForm<Inputs>();
 
   const router = useRouter();
 
   const handleLogin: SubmitHandler<Inputs> = async (data) => {
-    
     try {
       const res = await fetch("/api/admin/login", {
         method: "POST",
@@ -34,11 +39,11 @@ const Page = () => {
 
       if (!res.ok) {
         setError("root", { message: "Credential Mismatched!" });
-        alert("Credential Mismatched!")
+        setShowAlert(true);
         return;
-    }
+      }
 
-      const result = await res.json();
+      await res.json();
 
       router.push("/admin/dashboard");
     } catch {
@@ -46,8 +51,21 @@ const Page = () => {
     }
   };
 
+  useEffect(() => {
+   setFocus("email")
+  }, [])
+  
+
   return (
     <div className="absolute top-0 min-h-screen min-w-full bg-gray z-9999 flex-center">
+      {/* alert  */}
+      <AlertDiagram
+        title="Unauthorized!"
+        message="Wrong email or password!"
+        show={showAlert}
+        setShow={setShowAlert}
+      />
+
       <form
         onSubmit={handleSubmit(handleLogin)}
         className="p-8 bg-green/10 flex-center flex-col gap-3 rounded-md border box-border border-red/30 shadow-lg shadow-blue/20 min-w-48"
@@ -74,20 +92,32 @@ const Page = () => {
           </div>
           <div className="grid grid-cols-1 space-y-2">
             <label htmlFor="password">Password</label>
-            <Input
-              {...register("password", {
-                required: {
-                  value: true,
-                  message: "Password is required!",
-                },
-                minLength: { value: 8, message: "At least 8 character!" },
-                maxLength: { value: 15, message: "Maximum 15 character!" },
-              })}
-              id="password"
-              type="password"
-              placeholder="Enter Password"
-              className=" bg-gray  dark:bg-gray dark:placeholder:text-gray-200"
-            />
+            <div className="relative flex-center">
+              <Input
+                {...register("password", {
+                  required: {
+                    value: true,
+                    message: "Password is required!",
+                  },
+                  minLength: { value: 8, message: "At least 8 character!" },
+                  maxLength: { value: 15, message: "Maximum 15 character!" },
+                })}
+                id="password"
+                type={showPass ? "text" : "password"}
+                placeholder="Enter Password"
+                className=" bg-gray  dark:bg-gray dark:placeholder:text-gray-200 "
+              />
+              <button
+                onClick={() => {
+                  setShowPass((e) => !e);
+                  setFocus("password");
+                }}
+                type="button"
+                className="text-lg font-bold absolute right-2"
+              >
+                {showPass ? <IoEye /> : <IoEyeOff />}
+              </button>
+            </div>
             {errors.password && (
               <span className="text-xs text-red">
                 {errors.password.message}
@@ -105,11 +135,6 @@ const Page = () => {
             "Log In"
           )}
         </Button>
-        {/* {errors.root && (
-              <span className="text-lg text-red">
-                {errors.root.message}
-              </span>
-            )} */}
       </form>
     </div>
   );

@@ -12,7 +12,7 @@ const TestimonialsDisplay = ({
   return (
     <div className="reveal mt-8 bg-gray/80 mx-auto relative rounded-md p-8 border border-red/40  max-w-80 shadow-md shadow-blue/40 text-sm">
       
-      <div className="flex-center flex-col">
+      <div className="flex-center flex-col  reveal">
         <Image
           src={personAvatar}
           alt={personName}
@@ -24,10 +24,10 @@ const TestimonialsDisplay = ({
         <span className="text-gray-400 text-xs">{title}</span>
       </div>
 
-      <div>
+      <div className=" reveal">
         <p>{testimonial}</p>
       </div>
-      <div className=" text-2xl gap-3 p-4 flex-center w-fit mx-auto absolute z-50 rounded-full bg-red/50 py-8 -top-8 -right-12">
+      <div className=" reveal text-2xl gap-3 p-4 flex-center w-fit mx-auto absolute z-50 rounded-full bg-red/50 py-8 -top-8 -right-12">
         <FaQuoteLeft/>
         <FaQuoteRight/>
       </div>

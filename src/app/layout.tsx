@@ -32,13 +32,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth" className="scroll-smooth">
+    <html
+      lang="en"
+      suppressHydrationWarning
+      data-scroll-behavior="smooth"
+      className="scroll-smooth"
+    >
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppIns.variable} font-poppins antialiased`}
       >
         <Providers>
           <Header />
-          {children}
+          <main className="min-h-[calc(100vh-105px)]">{children}</main>
           <Footer />
         </Providers>
       </body>
