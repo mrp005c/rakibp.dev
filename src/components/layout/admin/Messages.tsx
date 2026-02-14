@@ -96,10 +96,10 @@ const Messages = () => {
   useEffect(() => {
     const priFilter = messages.filter((item) => {
       if (filterKey === "read") {
-        return item.readStatus === true;
+        return item.readStatus === false;
       }
       if (filterKey === "unread") {
-        return item.readStatus === false;
+        return item.readStatus === true;
       }
       return true;
     });
