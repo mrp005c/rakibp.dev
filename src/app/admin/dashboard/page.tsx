@@ -7,18 +7,16 @@ import Messages from "@/components/layout/admin/Messages";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
+type admin_tab_type = "home" | "message" | "data" | "code";
 const Page = () => {
   const router = useRouter();
-  const searchParams = useSearchParams();
 
-  const [adminTab, setAdminTab] = useState<string>(
-    searchParams.get("tab") || "home",
-  );
+  const [adminTab, setAdminTab] = useState<admin_tab_type>("home");
 
-  const admin_tab_buttons: { label: string; tab: string }[] = [
+  const admin_tab_buttons: { label: string; tab: admin_tab_type }[] = [
     { label: "Home", tab: "home" },
     { label: "Message", tab: "message" },
     { label: "Data", tab: "data" },
@@ -58,7 +56,14 @@ const Page = () => {
                 className="w-15 h-15 object-cover rounded-full"
               />
             </div>
-            <Button variant={"destructive"} size={"xs"} onClick={handleLogOut} className="cursor-pointer">Log out</Button>
+            <Button
+              variant={"destructive"}
+              size={"xs"}
+              onClick={handleLogOut}
+              className="cursor-pointer"
+            >
+              Log out
+            </Button>
           </div>
         </div>
         <div className="flex gap-2 items-start p-2">
@@ -78,10 +83,10 @@ const Page = () => {
           </div>
           {/* content container  */}
           <div className="button flex  w-full flex-col gap-2 p-3 rounded-md border border-red bg-green/10">
-          {(adminTab === "home" || adminTab === null) && <Home/>}
-          {adminTab === "message" && <Messages/>}
-          {adminTab === "data" && <Data/>}
-          {adminTab === "code" && <Code/>}
+            {(adminTab === "home" || adminTab === null) && <Home />}
+            {adminTab === "message" && <Messages />}
+            {adminTab === "data" && <Data />}
+            {adminTab === "code" && <Code />}
           </div>
         </div>
       </div>

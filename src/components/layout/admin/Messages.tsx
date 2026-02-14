@@ -13,7 +13,7 @@ const Messages = () => {
   const [messages, setMessages] = useState<messagetype[]>([]);
   const [filterMessages, setFilterMessages] = useState<messagetype[]>([]);
   const [filterKey, setFilterKey] = useState<filterKeyword>("unread");
-
+  const FilterKeys: filterKeyword[] = ["unread", "read", "all"];
   const handleLoadMessage = async () => {
     const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL;
     if (!SERVER_URL) {
@@ -125,7 +125,7 @@ const Messages = () => {
 
       {/* filter body  */}
       <div className="flex-center gap-3 w-fit flex-wrap">
-        {["unread", "read", "all"].map((item, index) => (
+        {FilterKeys.map((item, index) => (
           <Button
             variant={filterKey === item ? "default" : "secondary"}
             key={index}
