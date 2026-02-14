@@ -42,7 +42,7 @@ const Page = () => {
   return (
     <div className=" ">
       <div className="max-w-445 mx-auto ">
-        <div className="header flex-between flex-wrap w-full p-5 box-border bg-violet-50">
+        <div className="header flex-between flex-wrap w-full p-5 box-border bg-violet-50 dark:bg-slate-700">
           <Link href={"/admin/dashboard"} className="text-2xl font-bold">
             Dashboard
           </Link>
@@ -83,10 +83,18 @@ const Page = () => {
           </div>
           {/* content container  */}
           <div className="button flex  w-full flex-col gap-2 p-3 rounded-md border border-red bg-green/10">
-            {(adminTab === "home" || adminTab === null) && <Home />}
-            {adminTab === "message" && <Messages />}
-            {adminTab === "data" && <Data />}
-            {adminTab === "code" && <Code />}
+            <div className={`${adminTab === "home" ? "block" : "hidden"}`}>
+              <Home />
+            </div>
+            <div className={`${adminTab === "message" ? "block" : "hidden"}`}>
+              <Messages />
+            </div>
+            <div className={`${adminTab === "data" ? "block" : "hidden"}`}>
+              <Data />
+            </div>
+            <div className={`${adminTab === "code" ? "block" : "hidden"}`}>
+              <Code />
+            </div>
           </div>
         </div>
       </div>

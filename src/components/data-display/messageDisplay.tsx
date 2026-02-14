@@ -20,7 +20,7 @@ const MessageDisplay = ({
   updateMessage: (id: string, isRead: boolean) => Promise<void>;
 }) => {
   return (
-    <div className="p-2 sm:p-4 rounded-md border border-blue/30 box-border bg-violet-50">
+    <div className="p-2 sm:p-4 rounded-md border border-blue/30 box-border bg-violet">
       <div className="text-base">
         <div className="space-x-2">
           <span className="font-semibold">Name:</span>

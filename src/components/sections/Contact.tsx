@@ -12,10 +12,7 @@ const Contact = () => {
   const [isCopyid, setIsCopyid] = useState({ email: false, phone: false });
 
   return (
-    <section
-      id="contact"
-      className="bg-violet-100 dark:bg-[#1b1b40] pt-16 py-3 pb-48"
-    >
+    <section id="contact" className="bg-violet pt-16 py-3 pb-48">
       <Tags>Get In Touch</Tags>
       <div className=" max-w-7xl mx-auto px-3 py-4 flex justify-center max-md:flex-col-reverse gap-3">
         {/* left side */}

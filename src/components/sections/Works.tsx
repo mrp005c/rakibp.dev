@@ -5,7 +5,7 @@ import { Projects } from "../lib/data";
 
 const Works = () => {
   return (
-    <section id="works" className="bg-violet-100 dark:bg-[#1b1b40] pt-16 py-3">
+    <section id="works" className="bg-violet pt-16 py-3">
       <Tags>Works</Tags>
       <div className=" max-w-7xl mx-auto px-3 py-4">
         <div className="text-center  reveal">
@@ -13,7 +13,7 @@ const Works = () => {
         </div>
         <div>
           {Projects.map((project, index) => (
-            <ProjectsDisplay key={index} {...project} index={index}  />
+            <ProjectsDisplay key={index} {...project} index={index} />
           ))}
         </div>
       </div>

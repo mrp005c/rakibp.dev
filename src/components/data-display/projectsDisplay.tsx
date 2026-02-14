@@ -19,7 +19,7 @@ const ProjectsDisplay = ({
       className={`flex-between reveal items-stretch max-md:flex-col rounded-md border border-red/30 my-4 shadow-md shadow-blue/50 ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}
     >
       {/* Image  */}
-      <div className="md:w-1/2 flex-center p-8 box-border rounded-md bg-violet-100 dark:bg-[#344c5c] reveal">
+      <div className="md:w-1/2 flex-center p-8 box-border rounded-md bg-violet  reveal">
         <Link
           target="_blank"
           href={url}

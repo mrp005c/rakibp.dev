@@ -7,7 +7,7 @@ const Data = () => {
     <>
       {/* header of content */}
       <div>
-        <div className="p-2 rounded-sm bg-violet-100 box-border border border-blue/20 flex-between">
+        <div className="p-2 rounded-sm bg-violet box-border border border-blue/20 flex-between">
           <span>Data</span>
           <Button variant={"outline"} size={"icon"}>
             <MdRefresh />

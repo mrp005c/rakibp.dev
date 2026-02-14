@@ -5,7 +5,7 @@ import { SelfInfo } from "../lib/data";
 
 const About = () => {
   return (
-    <section id="about" className="bg-violet-100 dark:bg-[#582a5b] pt-16 py-3">
+    <section id="about" className="bg-violet pt-16 py-3">
       <Tags>About Me</Tags>
       <div className=" max-w-7xl mx-auto flex flex-col-reverse sm:flex-row-reverse justify-between py-10 px-3 items-center">
         {/* left side */}
@@ -15,7 +15,9 @@ const About = () => {
           </h1>
 
           {SelfInfo.about.map((item, index) => (
-            <p key={index} className="reveal">{item}</p>
+            <p key={index} className="reveal">
+              {item}
+            </p>
           ))}
           <div className="reveal">
             Finally, some quick bits about me.

@@ -111,7 +111,7 @@ const Messages = () => {
     <>
       {/* header of content */}
       <div>
-        <div className="p-2 rounded-sm bg-violet-100 box-border border border-blue/20 flex-between">
+        <div className="p-2 rounded-sm bg-violet box-border border border-blue/20 flex-between">
           <span>Messages</span>
           <Button
             variant={"outline"}
@@ -124,7 +124,7 @@ const Messages = () => {
       </div>
 
       {/* filter body  */}
-      <div className="flex-center gap-3 w-fit flex-wrap">
+      <div className="flex-center gap-3 w-fit flex-wrap p-2 box-border bg-green/40 rounded-md border border-red/50">
         {FilterKeys.map((item, index) => (
           <Button
             variant={filterKey === item ? "default" : "secondary"}
