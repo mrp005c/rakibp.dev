@@ -59,11 +59,11 @@ const MessageDisplay = ({
         >
           {readStatus ? (
             <>
-              Mark As Read <MailOpen />
+              Mark As Unread <Mail />{" "}
             </>
           ) : (
             <>
-              Mark As Unread <Mail />{" "}
+              Mark As Read <MailOpen />
             </>
           )}
         </Button>
