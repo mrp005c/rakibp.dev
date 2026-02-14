@@ -12,7 +12,6 @@ const MessageDisplay = ({
   message,
   readStatus,
   createdAt,
-  updatedAt,
   deleteMessage,
   updateMessage,
 }: messagetype & {
