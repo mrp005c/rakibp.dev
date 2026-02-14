@@ -32,12 +32,11 @@ const Testimonials = () => {
             className="flex flex-center justify-center flex-wrap content-center gap-4 "
           >
             {TestimonialsDetails.map((testimonal, index) => (
-              <SwiperSlide key={index} >
+              <SwiperSlide key={index}>
                 <TestimonialsDisplay {...testimonal} />
               </SwiperSlide>
             ))}
           </Swiper>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex assumenda temporibus accusantium quia excepturi illo animi voluptate. Sequi eius fugiat accusantium adipisci corporis quae nostrum? Nobis, perferendis. Accusamus illo alias quod culpa.</p>
         </div>
       </div>
     </section>
