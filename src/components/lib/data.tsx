@@ -1,8 +1,8 @@
-import { FaFacebook, FaFigma, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaFigma, FaGithub, FaLinkedin } from "react-icons/fa";
 import {
   experienceDetailstype,
   projectstype,
-  techDetailstype,
+  techdetailstype,
   testimonialstype,
 } from "./types";
 
@@ -33,10 +33,7 @@ import LogoCollaborate from "@/app/images/logos/logo-team-colaboration.webp";
 import LogoCommunication from "@/app/images/logos/logo-communication.jpg";
 
 // experience Logo
-import LogoUpwork from "@/app/images/logos/logo-upwork.svg";
 import LogoFullStack from "@/app/images/logos/full-stack-logo.jpg";
-import LogoGreenApex from "@/app/images/logos/logo-greenapex.svg";
-import LogoDotnpixel from "@/app/images/logos/logo-dotnpixel.svg";
 
 // Project Logo
 import PrevNextEcom from "@/app/images/site/nextecom-preview.png";
@@ -118,125 +115,145 @@ export const Social_Links = [
   },
 ];
 
-export const TechDetails: {
-  "Frontend Skills": techDetailstype[];
-  "Backend Skills": techDetailstype[];
-  "Tools & Tech": techDetailstype[];
-} = {
+export const TechDetails: techdetailstype = {
   "Frontend Skills": [
     {
       label: "Next.js",
       logo: LogoNextjs,
       url: "https://nextjs.org/",
+      level: "Intermediate",
     },
     {
       label: "React",
       logo: LogoReact,
       url: "https://react.dev/",
+      level: "Intermediate",
     },
     {
-      label: "Tailwindcss",
+      label: "Tailwind CSS",
       logo: LogoTailwindcss,
       url: "https://tailwindcss.com/",
+      level: "Intermediate",
     },
     {
       label: "Bootstrap",
       logo: LogoBootstrap,
-      url: "https://tailwindcss.com/",
+      url: "https://getbootstrap.com/",
+      level: "Intermediate",
     },
     {
-      label: "Javascript",
+      label: "JavaScript",
       logo: LogoJavascript,
       url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      level: "Intermediate",
     },
     {
-      label: "Typescript",
+      label: "TypeScript",
       logo: LogoTypescript,
       url: "https://www.typescriptlang.org/",
+      level: "Intermediate",
     },
     {
       label: "HTML",
       logo: LogoHtml,
-      url: "https://developer.mozilla.org/en-US/docs/Web/Html",
+      url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+      level: "Intermediate",
     },
     {
       label: "CSS",
       logo: LogoCss,
-      url: "https://developer.mozilla.org/en-US/docs/Web/Css",
+      url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+      level: "Intermediate",
     },
     {
       label: "Swiper.js",
       logo: LogoSwiperjs,
-      url: "https://www.typescriptlang.org/",
+      url: "https://swiperjs.com/",
+      level: "Intermediate",
     },
     {
       label: "Responsive Design",
       logo: LogoResponsive,
-      url: "https://www.typescriptlang.org/",
+      url: "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design",
+      level: "Intermediate",
     },
   ],
+
   "Backend Skills": [
     {
       label: "Node.js",
       logo: LogoNodejs,
       url: "https://nodejs.org/en",
+      level: "Intermediate",
     },
     {
       label: "Express.js",
       logo: LogoExpress,
       url: "https://expressjs.com/",
+      level: "Intermediate",
     },
     {
       label: "REST APIs",
       logo: LogoRestApis,
-      url: "https://www.geeksforgeeks.org/node-js/rest-api-introduction/",
+      url: "https://restfulapi.net/",
+      level: "Intermediate",
     },
     {
       label: "MongoDB",
       logo: LogoMongoDB,
       url: "https://www.mongodb.com/",
+      level: "Intermediate",
     },
     {
-      label: "MySql",
+      label: "MySQL",
       logo: LogoMySql,
       url: "https://www.mysql.com/",
+      level: "Intermediate",
     },
     {
-      label: "PostgreSQL(Basic Usage)",
+      label: "PostgreSQL (Basic)",
       logo: LogoPostgreSQL,
       url: "https://www.postgresql.org/",
+      level: "Intermediate",
     },
   ],
+
   "Tools & Tech": [
     {
       label: "Git",
       logo: LogoGit,
       url: "https://git-scm.com/",
+      level: "Intermediate",
     },
     {
       label: "GitHub",
       logo: LogoGithub,
       url: "https://github.com/",
+      level: "Intermediate",
     },
     {
       label: "Redux Toolkit",
       logo: LogoReduxToolkit,
       url: "https://redux-toolkit.js.org/",
+      level: "Intermediate",
     },
     {
       label: "Problem Solving",
       logo: LogoProblem,
-      url: "/",
+      url: "#",
+      level: "Intermediate",
     },
     {
       label: "Communication",
       logo: LogoCommunication,
-      url: "/",
+      url: "#",
+      level: "Intermediate",
     },
     {
       label: "Team Collaboration",
       logo: LogoCollaborate,
-      url: "/",
+      url: "#",
+      level: "Intermediate",
     },
   ],
 };

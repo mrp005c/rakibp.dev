@@ -1,11 +1,15 @@
 import { type StaticImageData } from "next/image";
 
-export type techDetailstype = {
+type techDetailtype = {
   label: string;
   logo: string | StaticImageData;
   darkModeLogo?: string | StaticImageData;
   url: string;
+  level: "Beginner" | "Intermediate" | "Advanced";
+  experience?: string;
 };
+
+export type techdetailstype = Record<string, techDetailtype[]>;
 
 export type experienceDetailstype = {
   logo: string | StaticImageData;

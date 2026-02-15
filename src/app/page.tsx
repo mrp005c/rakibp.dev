@@ -43,7 +43,7 @@ export default function Home() {
             once: false,
             trigger: el,
             start: "top 85%",
-            toggleActions: "play reverse play reverse",
+            toggleActions: "play none none reverse",
           },
         },
       );

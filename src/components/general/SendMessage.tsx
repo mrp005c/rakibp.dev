@@ -5,6 +5,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { VscLoading } from "react-icons/vsc";
+import { Toaster } from "../ui/sonner";
+import { toast } from "sonner";
 
 type Inputs = {
   name: string;
@@ -42,7 +44,10 @@ const SendMessage = () => {
       }
       const res = await data.json();
       if (res.success) {
+        toast.success("Message Sent Successful.");
         reset();
+      } else {
+        toast.error("Message Not Sent Successful!");
       }
     } catch (error) {
       console.log(error);
@@ -51,11 +56,14 @@ const SendMessage = () => {
 
   return (
     <div className="md:w-1/2 p-4 rounded-md bg-violet-200 dark:bg-[#282838] border-red/30 border">
+      <Toaster />
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="space-y-4 flex-center flex-col reveal"
       >
-        <h3 className="text-xl text-center font-bold">Feel Free To Reach Out</h3>
+        <h3 className="text-xl text-center font-bold">
+          Feel Free To Reach Out
+        </h3>
         <div className="space-y-4 w-full">
           <div className="grid grid-cols-2 content-start space-x-2">
             <div className="grid grid-cols-1 space-y-2">
